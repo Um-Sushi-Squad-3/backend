@@ -1,0 +1,24 @@
+
+[
+  {
+    "id": 1,
+    "name": "Sushi de Salmão",
+    "price": 22.5,
+    "category": "Sushi",
+    "image": "/images/sushi1.png"
+  },
+  {
+    "id": 2,
+    "name": "Temaki de Atum",
+    "price": 19.0,
+    "category": "Temaki",
+    "image": "/images/temaki1.png"
+  },
+  {
+    "id": 3,
+    "name": "Hot Roll",
+    "price": 17.0,
+    "category": "Sushi Frito",
+    "image": "/images/hotroll1.png"
+  }
+]
