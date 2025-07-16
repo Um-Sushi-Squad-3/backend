@@ -13,9 +13,11 @@ Repositório onde iremos colocar nossos entregáveis de backend do nosso projeto
 - **Instalar nodeJS**
 - **Indicado ter instalado o postman para ver as respostas das requisições**
 
-**1- Após clonar o projeto, rode o comando npm install**
-**2- Rode o comando npm install --save @nestjs/swagger**
-**3- Rode o comando npm run start para iniciar backend**
+### Comandos para o repositório
+
+- **1- Após clonar o projeto, rode o comando npm install**
+- **2- Rode o comando npm install --save @nestjs/swagger**
+- **3- Rode o comando npm run start para iniciar backend**
 
 ### 🛠 Tecnologias
 
