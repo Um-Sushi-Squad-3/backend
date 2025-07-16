@@ -27,9 +27,12 @@
 
 ## Project setup
 
+
 ```bash
 $ npm install
 ```
+$ npm install --save @nestjs/swagger
+
 
 ## Compile and run the project
 
