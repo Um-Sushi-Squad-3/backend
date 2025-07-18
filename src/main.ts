@@ -6,6 +6,13 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // 👉 Habilitar CORS
+  app.enableCors({
+    origin: '*', // substitua por seu domínio em produção
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization',
+  });
+
   // Configuração do Swagger
   const config = new DocumentBuilder()
     .setTitle('Um Sushi API')
