@@ -1,3 +1,6 @@
+// Estruturam os dados necessários para criar um pedido em uma API 
+// Eles são usados na rota POST /menu/order
+
 import { ApiProperty } from '@nestjs/swagger';
 
 export class OrderItem {

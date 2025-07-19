@@ -1,3 +1,6 @@
+// Controller principal da sua aplicação 
+// (normalmente usado como exemplo inicial no projeto gerado pelo CLI do NestJS)
+
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 

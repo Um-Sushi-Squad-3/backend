@@ -12,7 +12,7 @@ async function bootstrap() {
 
   //  Habilitar CORS
   app.enableCors({
-    origin: '*', // substitua por seu domínio em produção
+    origin: '*', 
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type,Authorization',
   });
