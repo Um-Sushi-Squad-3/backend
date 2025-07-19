@@ -1,24 +1,44 @@
-
 [
   {
     "id": 1,
-    "name": "Sushi de Salmão",
+    "name": "Hot Roll",
     "price": 22.5,
-    "category": "Sushi",
-    "image": "/images/sushi1.png"
+    "category": "Sushi Frito",
+    "image": "/images/hot-roll.jpg"
   },
   {
     "id": 2,
-    "name": "Temaki de Atum",
-    "price": 19.0,
-    "category": "Temaki",
-    "image": "/images/temaki1.png"
+    "name": "Joe Especial",
+    "price": 25,
+    "category": "Joe",
+    "image": "/images/joe-especial.jpg"
   },
   {
     "id": 3,
-    "name": "Hot Roll",
-    "price": 17.0,
-    "category": "Sushi Frito",
-    "image": "/images/hotroll1.png"
+    "name": "Niguiri",
+    "price": 19,
+    "category": "Sushi",
+    "image": "/images/niguiri.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Philadelphia",
+    "price": 21,
+    "category": "Sushi",
+    "image": "/images/philadelphia.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Temaki Skin",
+    "price": 24,
+    "category": "Temaki",
+    "image": "/images/temaki-skin.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Uramaki Salmão",
+    "price": 23,
+    "category": "Uramaki",
+    "image": "/images/uramaki-salmao.jpg"
   }
 ]

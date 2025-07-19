@@ -1,12 +1,16 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { join } from 'path';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  // 👉 Habilitar CORS
+  //  Servir imagens da pasta 'public'
+  app.useStaticAssets(join(__dirname, '..', 'public'));
+
+  //  Habilitar CORS
   app.enableCors({
     origin: '*', // substitua por seu domínio em produção
     methods: 'GET,POST,PUT,DELETE',
@@ -21,7 +25,7 @@ async function bootstrap() {
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document); 
+  SwaggerModule.setup('api', app, document);
 
   await app.listen(3000);
 }
