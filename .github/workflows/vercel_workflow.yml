@@ -38,6 +38,6 @@ jobs:
 
       - name: Deploy to Vercel
         run: |
-          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-          vercel build --token=${{ secrets.VERCEL_TOKEN }}
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --project=qualidade-api-backend
+          vercel build --token=${{ secrets.VERCEL_TOKEN }} --project=qualidade-api-backend
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --project=qualidade-api-backend
