@@ -2,7 +2,7 @@ name: Test and Deploy Next.js API to Vercel
 
 on:
   push:
-    branches: [more_validtions_v2]
+    branches: [more_validations_v2]
   pull_request:
 
 jobs:
