@@ -11,6 +11,6 @@
         {
             "src": "/menu/order",
             "dest": "/menu/order"
-        },
+        }
     ]
 }
