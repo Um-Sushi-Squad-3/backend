@@ -1,5 +1,3 @@
-// Serviço no NestJS que fornece a lógica de negócio para o controller MenuController
-
 import { Injectable } from '@nestjs/common';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { readFileSync } from 'fs';
