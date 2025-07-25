@@ -1,6 +1,3 @@
-// Estruturam os dados necessários para criar um pedido em uma API
-// Eles são usados na rota POST /menu/order
-
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsNotEmpty,
@@ -13,7 +10,6 @@ import {
   Max,
   ValidateNested,
   ArrayMinSize,
-  IsOptional,
   Matches,
 } from 'class-validator';
 import { Type } from 'class-transformer';
@@ -47,7 +43,7 @@ export class CreateOrderDto {
   @ApiProperty({ example: '11999999999', description: 'Telefone do cliente' })
   @IsNotEmpty({ message: 'O telefone é obrigatório' })
   @IsString({ message: 'O telefone deve ser uma string' })
-  @Matches(/^\d{10,11}$/, { message: 'O telefone deve ter 10 ou 11 dígitos' })
+  @Matches(/^\d{9,11}$/, { message: 'O telefone deve ter entre 9 e 11 dígitos' })
   customerPhone!: string;
 
   @ApiProperty({
@@ -66,16 +62,4 @@ export class CreateOrderDto {
   @ValidateNested({ each: true })
   @Type(() => OrderItem)
   items!: OrderItem[];
-
-  @ApiProperty({
-    example: 'Sem cebola',
-    description: 'Observações adicionais',
-    required: false,
-  })
-  @IsOptional()
-  @IsString({ message: 'As observações devem ser uma string' })
-  @MaxLength(500, {
-    message: 'As observações devem ter no máximo 500 caracteres',
-  })
-  observations?: string;
 }
