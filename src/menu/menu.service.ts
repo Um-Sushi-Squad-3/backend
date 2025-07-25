@@ -8,7 +8,7 @@ import { join } from 'path';
 @Injectable()
 export class MenuService {
   getMenuItems() {
-    const filePath = join(__dirname, 'menu.json');
+    const filePath = join(process.cwd(), 'data', 'menu.json'); // novo caminho
     const data = readFileSync(filePath, 'utf-8');
     return JSON.parse(data);
   }
