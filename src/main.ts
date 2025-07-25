@@ -27,12 +27,12 @@ async function bootstrap() {
   // Servir imagens da pasta 'public'
   app.useStaticAssets(join(__dirname, '..', 'public'));
 
-  // Defina as origens permitidas conforme ambiente
+
   const allowedOrigins =
     process.env.NODE_ENV === 'production'
       ? [
       
-          'https://um-sushi-front-lake.vercel.app', // Adicione seu domínio Vercel aqui
+          'https://um-sushi-front-lake.vercel.app', 
         ]
       : ['http://localhost:3000', 'http://localhost:3001'];
 
@@ -53,14 +53,12 @@ async function bootstrap() {
     credentials: true,
   });
 
-  // Seu middleware de auditoria e demais configurações seguem normalmente
-  // ...
 
   await app.listen(3000);
 
-  logger.log('🍣 Um Sushi API iniciada na porta 3000');
-  logger.log('📖 Documentação: http://localhost:3000/api');
-  logger.log('✅ Validações AAA ativadas');
+  logger.log(' Um Sushi API iniciada na porta 3000');
+  logger.log(' Documentação: http://localhost:3000/api');
+  logger.log(' Validações AAA ativadas');
 }
 
 bootstrap().catch((error) => {
