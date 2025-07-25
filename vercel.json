@@ -1,0 +1,16 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/menu",
+            "dest": "/menu"
+        },
+        {
+            "src": "/menu/order",
+            "dest": "/menu/order"
+        },
+    ]
+}
