@@ -27,7 +27,7 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/more_validtions_v2'
+    if: github.ref == 'refs/heads/more_validations_v2'
 
     steps:
       - name: Checkout code
