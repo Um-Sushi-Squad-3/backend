@@ -10,7 +10,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const logger = new Logger('UmSushi');
 
-  // Configurar ValidationPipe global
+  // ValidationPipe global
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
@@ -24,24 +24,17 @@ async function bootstrap() {
     }),
   );
 
-  // Servir imagens da pasta 'public'
+  // Servir arquivos estáticos
   app.useStaticAssets(join(__dirname, '..', 'public'));
-
 
   const allowedOrigins =
     process.env.NODE_ENV === 'production'
-      ? [
-      
-          'https://um-sushi-front-lake.vercel.app', 
-        ]
+      ? ['https://um-sushi-front-lake.vercel.app']
       : ['http://localhost:3000', 'http://localhost:3001'];
 
-  // Habilitar CORS com callback para validar a origem
   app.enableCors({
     origin: (origin, callback) => {
-      // Permite requests sem origin (como Postman, curl)
       if (!origin) return callback(null, true);
-
       if (allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -53,12 +46,23 @@ async function bootstrap() {
     credentials: true,
   });
 
+  // Swagger configuration 
+  const config = new DocumentBuilder()
+    .setTitle('Um Sushi API')
+    .setDescription('API para o cardápio e pedidos do Um Sushi')
+    .setVersion('1.0')
+    .addTag('Menu', 'Operações do cardápio')
+    .build();
 
-  await app.listen(3000);
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
 
-  logger.log(' Um Sushi API iniciada na porta 3000');
-  logger.log(' Documentação: http://localhost:3000/api');
-  logger.log(' Validações AAA ativadas');
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
+
+  logger.log(`Um Sushi API iniciada na porta ${port}`);
+  logger.log(`Documentação: http://localhost:${port}/api`);
+  logger.log('Validações AAA ativadas');
 }
 
 bootstrap().catch((error) => {
